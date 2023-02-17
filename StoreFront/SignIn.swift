@@ -29,8 +29,8 @@ struct SignIn: View {
                     VStack {
                         Form {
                             Section {
-                                TextField("Email", text: $email).autocorrectionDisabled().textInputAutocapitalization(.none)
-                                TextField("Password", text: $password).autocorrectionDisabled().textInputAutocapitalization(.none)
+                                TextField("Email", text: $email).autocorrectionDisabled().textInputAutocapitalization(.never)
+                                TextField("Password", text: $password).autocorrectionDisabled().textInputAutocapitalization(.never)
                             }
                             
                             
