@@ -15,6 +15,8 @@
 		F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17928299EF5F700CA14C6 /* Profile.swift */; };
 		F2A1792B299EF7C500CA14C6 /* StoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */; };
 		F2A1792D299EF7E000CA14C6 /* DealCampaigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */; };
+		F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */; };
+		F2A17931299F098500CA14C6 /* CannabisInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17930299F098500CA14C6 /* CannabisInventory.swift */; };
 		F2BFFF89299C4D76008B48D9 /* StoreFrontApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFF88299C4D76008B48D9 /* StoreFrontApp.swift */; };
 		F2BFFF8B299C4D76008B48D9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFF8A299C4D76008B48D9 /* Persistence.swift */; };
 		F2BFFF8E299C4D76008B48D9 /* StoreFront.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFF8C299C4D76008B48D9 /* StoreFront.xcdatamodeld */; };
@@ -53,6 +55,8 @@
 		F2A17928299EF5F700CA14C6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfo.swift; sourceTree = "<group>"; };
 		F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCampaigns.swift; sourceTree = "<group>"; };
+		F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
+		F2A17930299F098500CA14C6 /* CannabisInventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannabisInventory.swift; sourceTree = "<group>"; };
 		F2BFFF85299C4D76008B48D9 /* StoreFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BFFF88299C4D76008B48D9 /* StoreFrontApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontApp.swift; sourceTree = "<group>"; };
 		F2BFFF8A299C4D76008B48D9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				F2A17928299EF5F700CA14C6 /* Profile.swift */,
 				F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */,
 				F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */,
+				F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */,
+				F2A17930299F098500CA14C6 /* CannabisInventory.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -305,10 +311,12 @@
 				F2A1792D299EF7E000CA14C6 /* DealCampaigns.swift in Sources */,
 				F2995B46299D8D4D001E1D4D /* User+CoreDataProperties.swift in Sources */,
 				F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */,
+				F2A17931299F098500CA14C6 /* CannabisInventory.swift in Sources */,
 				F2BFFF90299C4D76008B48D9 /* ContentView.swift in Sources */,
 				F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */,
 				F2BFFF8B299C4D76008B48D9 /* Persistence.swift in Sources */,
 				F2A1792B299EF7C500CA14C6 /* StoreInfo.swift in Sources */,
+				F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */,
 				F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */,
 				F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */,
 				F2BFFFBD299C5590008B48D9 /* Register.swift in Sources */,
