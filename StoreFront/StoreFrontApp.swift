@@ -13,7 +13,7 @@ struct StoreFrontApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SignIn()
+            firstScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

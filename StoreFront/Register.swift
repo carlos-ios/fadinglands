@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import OSLog
 
 struct Register: View {
 //    @FetchRequest(fetchRequest: Registration.fetchRequest()) var registration: FetchedResults<Registration>
@@ -15,7 +16,9 @@ struct Register: View {
     @State var lastName: String = ""
     @State var email: String = ""
     @State var password: String = ""
-    let context = PersistenceController.shared.container.viewContext
+    @State var showingAlert = false
+    @State var passwordAlert = false
+    var logger = Logger()
     var body: some View {
         NavigationView {
             VStack {
@@ -27,32 +30,49 @@ struct Register: View {
                 VStack {
                     Form {
                         Section {
-                            TextField("First Name", text: $firstName).autocorrectionDisabled()
-                            TextField("Last Name", text: $lastName).autocorrectionDisabled()
-                            TextField("Email", text: $email).autocorrectionDisabled()
-                            TextField("Password", text: $password).autocorrectionDisabled()
+                            TextField("First Name", text: $firstName).autocorrectionDisabled().textInputAutocapitalization(.never)
+                            TextField("Last Name", text: $lastName).autocorrectionDisabled().textInputAutocapitalization(.never)
+                            TextField("Email", text: $email).autocorrectionDisabled().textInputAutocapitalization(.never)
+                            TextField("Password", text: $password).autocorrectionDisabled().textInputAutocapitalization(.never)
                         }
                         Button("Submit") {
-                            let registrationInfo = User(context: self.userInfo)
+                            let registrationInfo = NSEntityDescription.insertNewObject(forEntityName: "User", into: self.userInfo) as! User
+                            if !self.email.contains(word: "@") {
+                                self.showingAlert = true
+                            }
+                            if self.password.count < 5 {
+                                self.passwordAlert = true
+                            }
                             registrationInfo.firstName = self.firstName
                             registrationInfo.lastName = self.lastName
                             registrationInfo.lastName = self.lastName
                             registrationInfo.email = self.email
                             registrationInfo.password = self.password
                             do {
-                                if self.userInfo.hasChanges {
+                                if self.userInfo.hasChanges && showingAlert != true && passwordAlert != true {
                                     try PersistenceController.shared.container.viewContext.save()
-                                    
-                                    print(self.userInfo.registeredObjects)
-                                    let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-                                    print(try self.userInfo.fetch(fetchRequest))
+                                    self.email = ""
+                                    self.firstName = ""
+                                    self.lastName = ""
+                                    self.password = ""
+                                    logger.log("New data has been saved successfully")
                                 } else {
-                                    print("No changes detected")
+                                    logger.log("No data submitted")
                                 }
                             } catch {
-                                print(error.localizedDescription)
+                                logger.log("Unable to save registration data: \(error.localizedDescription)")
                             }
                             //                UITextField.appearance().text = ""
+                        }.alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Registration Error Message"),
+                                  message: Text("Email in incorrect format"),
+                                  dismissButton: .default(Text("Error unable to submit"))
+                            )
+                        }.alert(isPresented: $passwordAlert) {
+                            Alert(title: Text("Password Error Message"),
+                                  message: Text("Password must be longer than 5 characters"),
+                                  dismissButton: .default(Text("Unable to submit"))
+                            )
                         }
                         NavigationLink(destination: SignIn()){
                             Text("Login")
@@ -65,9 +85,9 @@ struct Register: View {
         }.navigationBarHidden(true)
             .navigationTitle("")
     }
-    var disableForm: Bool {
-        email.count < 5 || password.count < 5
-    }
+//    var disableForm: Bool {
+//        email.count < 5 || password.count < 5
+//    }
 }
 
 struct Register_Previews: PreviewProvider {
