@@ -15,6 +15,7 @@ struct SignIn: View {
     @State var password: String = ""
     @State private var showingAlert = false
     @State var authenticate = Authenticate()
+    @State var isLoggedIn = false
      var body: some View {
         
             NavigationView {
@@ -36,34 +37,37 @@ struct SignIn: View {
                             
                             Button("Login") {
                                 self.adminLogin()
-                                do{
-                                    let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-                                    var passwordObjects = [String]()
-                                    var emailObjects = [String]()
-                                    let results = try self.userInfo.fetch(fetchRequest)
-                                    for result in results as [NSManagedObject]{
-
-                                        if let theEmail = result.value(forKey: "email") as? String {
-                                            emailObjects.append(theEmail)
+//                                if self.password.isValidPassword() {
+                                    do{
+                                        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+                                        var passwordObjects = [String]()
+                                        var emailObjects = [String]()
+                                        let results = try self.userInfo.fetch(fetchRequest)
+                                        for result in results as [NSManagedObject]{
+                                            
+                                            if let theEmail = result.value(forKey: "email") as? String {
+                                                emailObjects.append(theEmail)
+                                            }
+                                            if let thePassword = result.value(forKey: "password") as? String {
+                                                passwordObjects.append(thePassword)
+                                            }
                                         }
-                                        if let thePassword = result.value(forKey: "password") as? String {
-                                            passwordObjects.append(thePassword)
-                                        }
-                                        }
-                                    authenticateLogin(anyEmail: emailObjects, anyPassword: passwordObjects)
-                                    self.email = ""
-                                    self.password = ""
+                                        authenticateLogin(anyEmail: emailObjects, anyPassword: passwordObjects)
+                                        self.email = ""
+                                        self.password = ""
                                     } catch {
-                                    print("error")
-                                }
-                              
-                                Authenticate()
+                                        print("error")
+                                    }
+//                                }
                             }.alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Important Message"),
                                       message: Text("incorrect Login"),
                                       dismissButton: .default(Text("Error"))
                                 )
                             }.foregroundColor(.red).scaledToFill()
+                                .fullScreenCover(isPresented: $isLoggedIn) {
+                                    MainPage()
+                                }
                             NavigationLink(destination: Register()) {
                                 Text("Register")
                             }.foregroundColor(.green)
@@ -80,6 +84,7 @@ struct SignIn: View {
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "User")
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
             do {
+                print("all data: \(self.userInfo.registeredObjects)")
                 try self.userInfo.execute(deleteRequest)
                 print("user data \(self.userInfo)")
             } catch let error as NSError {
@@ -92,37 +97,34 @@ struct SignIn: View {
     private func authenticateLogin(anyEmail: [String], anyPassword: [String]) {
 //        .filter({ $0.username == "user" && $0.password == "pass" }).first
         
-        if anyEmail.description.contains(word: self.email){
-            if anyPassword.description.contains(word: self.password) {
+        if anyEmail.description.contains(word: self.email) && anyPassword.description.contains(word: self.password) {
                 print("entered email: ",self.email)
                 print("entered password: ",self.password)
                 print("login successful")
-                authenticate.login()
+            self.isLoggedIn = true
                 
-            } else if self.password == "" {
+            } else {
                 self.showingAlert = true
+                print("entered email: ",self.email)
+                print("entered password: ",self.password)
+                print("login unsuccessful")
             }
                 
-        } else {
-            self.showingAlert = true
-            print("entered email: ",self.email)
-            print("entered password: ",self.password)
-            print("login unsuccessful")
         }
     }
-}
+
 
 struct firstScreen: View {
     @StateObject var authenticate = Authenticate()
+    
     var body: some View {
         
-            
-        if authenticate.isLoggedin {
-                    MainPage()
+        if !authenticate.isLoggedin {
+                     SignIn(authenticate: authenticate)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .transition(.move(edge: .leading))
                 } else {
-                    SignIn(authenticate: authenticate)
+                     MainPage()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .transition(.move(edge: .leading))
                 }

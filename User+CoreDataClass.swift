@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  StoreFront
 //
-//  Created by Carlos Henderson on 2/15/23.
+//  Created by Carlos Henderson on 2/17/23.
 //
 //
 
