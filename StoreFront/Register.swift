@@ -12,6 +12,7 @@ import OSLog
 struct Register: View {
 //    @FetchRequest(fetchRequest: Registration.fetchRequest()) var registration: FetchedResults<Registration>
     @Environment(\.managedObjectContext) private var userInfo
+    @StateObject var viewmodel = SigninViewModel()
 //    @State var firstName: String
     @AppStorage("email") var email: String = ""
     @AppStorage("password") var password: String = ""
@@ -35,14 +36,14 @@ struct Register: View {
                 VStack {
                     Form {
                         Section {
-                            TextField("First Name", text: $firstName).autocorrectionDisabled().textInputAutocapitalization(.never)
-                            TextField("Last Name", text: $lastName).autocorrectionDisabled().textInputAutocapitalization(.never)
-                            TextField("Email", text: $email).autocorrectionDisabled().textInputAutocapitalization(.never)
-                            TextField("Password", text: $password).autocorrectionDisabled().textInputAutocapitalization(.never)
+//                            TextField("First Name", text: $firstName).autocorrectionDisabled().textInputAutocapitalization(.never)
+//                            TextField("Last Name", text: $lastName).autocorrectionDisabled().textInputAutocapitalization(.never)
+                            TextField("Email", text: $viewmodel.credentials.email).autocorrectionDisabled().textInputAutocapitalization(.never)
+                            TextField("Password", text: $viewmodel.credentials.password).autocorrectionDisabled().textInputAutocapitalization(.never)
                         }
                         Button("Submit") {
 //                            var registrationInfo = NSEntityDescription.insertNewObject(forEntityName: "User", into: self.userInfo) as! User
-                            let registrationInfo = User(context: self.userInfo)
+                            var credentials = Credentials()
 //                            if !self.email.contains(word: "@") {
 //                                self.showingAlert = true
 //                            }
@@ -53,28 +54,13 @@ struct Register: View {
 //                                self.passwordAlertcontent = true
 //                            }
 //
-                            registrationInfo.firstName = self.firstName
-                            registrationInfo.lastName = self.lastName
-                            registrationInfo.lastName = self.lastName
-                            registrationInfo.email = self.email
-                            registrationInfo.password = self.password
-
-                            do {
-                                if self.userInfo.hasChanges && showingAlert != true && passwordAlertlength != true && passwordAlertcontent != true {
-                                    try
-                                    PersistenceController.shared.container.viewContext.save()
-                                   
-                                    logger.log("New data has been saved successfully")
-                                    logger.log("saved data : \(self.userInfo.registeredObjects)")
-                                } else {
-                                    logger.log("No data submitted")
-                                }
-                            } catch {
-                                logger.log("Unable to save registration data: \(error.localizedDescription)")
+                            credentials.email = viewmodel.credentials.email
+                            credentials.password = viewmodel.credentials.password
+                            viewmodel.storeCredentialsNext = true
+                            if KeychainStorage.saveCredentials(credentials) {
+                                viewmodel.storeCredentialsNext = false
                             }
                             self.email = ""
-                            self.firstName = ""
-                            self.lastName = ""
                             self.password = ""
                             //                UITextField.appearance().text = ""
                         }.alert(isPresented: $showingAlert) {

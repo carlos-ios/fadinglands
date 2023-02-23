@@ -16,6 +16,8 @@
 		F29E4FB629A6CDD60038B2A4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB529A6CDD60038B2A4 /* APIService.swift */; };
 		F29E4FB829A6CDDF0038B2A4 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */; };
 		F29E4FBA29A6D1AC0038B2A4 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */; };
+		F29E4FBE29A6F6E10038B2A4 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = F29E4FBD29A6F6E10038B2A4 /* SwiftKeychainWrapper */; };
+		F29E4FC029A6F7AC0038B2A4 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FBF29A6F7AC0038B2A4 /* KeychainStorage.swift */; };
 		F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17924299ECC7100CA14C6 /* StringExtensions.swift */; };
 		F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17926299ED8C400CA14C6 /* MainPage.swift */; };
 		F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17928299EF5F700CA14C6 /* Profile.swift */; };
@@ -62,6 +64,8 @@
 		F29E4FB529A6CDD60038B2A4 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = "../../../Downloads/My Secure App - Starter/My Secure App/Services/APIService.swift"; sourceTree = "<group>"; };
 		F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "../../../../Downloads/My Secure App - Starter/My Secure App/Services/UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		F29E4FBF29A6F7AC0038B2A4 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		F29E4FC129A7019A0038B2A4 /* StoreFrontRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StoreFrontRelease.entitlements; sourceTree = "<group>"; };
 		F2A17924299ECC7100CA14C6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F2A17926299ED8C400CA14C6 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		F2A17928299EF5F700CA14C6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29E4FBE29A6F6E10038B2A4 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +149,7 @@
 		F2BFFF87299C4D76008B48D9 /* StoreFront */ = {
 			isa = PBXGroup;
 			children = (
+				F29E4FC129A7019A0038B2A4 /* StoreFrontRelease.entitlements */,
 				F2A17923299ECC5F00CA14C6 /* Extensions */,
 				F2BFFF88299C4D76008B48D9 /* StoreFrontApp.swift */,
 				F2BFFF8A299C4D76008B48D9 /* Persistence.swift */,
@@ -165,6 +171,7 @@
 				F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */,
 				F29E4FB329A6CD350038B2A4 /* SigninViewModel.swift */,
 				F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */,
+				F29E4FBF29A6F7AC0038B2A4 /* KeychainStorage.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -210,6 +217,9 @@
 			dependencies = (
 			);
 			name = StoreFront;
+			packageProductDependencies = (
+				F29E4FBD29A6F6E10038B2A4 /* SwiftKeychainWrapper */,
+			);
 			productName = StoreFront;
 			productReference = F2BFFF85299C4D76008B48D9 /* StoreFront.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +292,9 @@
 				Base,
 			);
 			mainGroup = F2BFFF7C299C4D76008B48D9;
+			packageReferences = (
+				F29E4FBC29A6F6E10038B2A4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = F2BFFF86299C4D76008B48D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,6 +356,7 @@
 				F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */,
 				F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */,
 				F26C35DE29A59BBE007AA2A3 /* ProfileViewModel.swift in Sources */,
+				F29E4FC029A6F7AC0038B2A4 /* KeychainStorage.swift in Sources */,
 				F29E4FB829A6CDDF0038B2A4 /* UIApplication+Extension.swift in Sources */,
 				F2BFFFBD299C5590008B48D9 /* Register.swift in Sources */,
 			);
@@ -533,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = StoreFront/StoreFront.entitlements;
+				CODE_SIGN_ENTITLEMENTS = StoreFront/StoreFrontRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StoreFront/Preview Content\"";
@@ -692,6 +706,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F29E4FBC29A6F6E10038B2A4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F29E4FBD29A6F6E10038B2A4 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F29E4FBC29A6F6E10038B2A4 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F2BFFF8C299C4D76008B48D9 /* StoreFront.xcdatamodeld */ = {

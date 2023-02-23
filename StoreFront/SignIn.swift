@@ -42,11 +42,6 @@ struct SignIn: View {
                             Button("Login") {
                                 self.adminLogin()
                                     do{
-                                        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-                                        var passwordObjects = [NSManagedObject]()
-                                        var emailObjects = [NSManagedObject]()
-                                        let results = try self.userInfo.fetch(fetchRequest)
-                                        debugPrint("1::")
                                         viewmodel.login { success in
                                             authenticate.updateValidation(success: success)
                                         }
@@ -54,21 +49,23 @@ struct SignIn: View {
 
                                         self.viewmodel.credentials.email = ""
                                         self.viewmodel.credentials.password = ""
-                                    } catch {
-                                        print("error")
                                     }
                                 
-                            }.disabled(viewmodel.loginDisabled)
-                                .alert(isPresented: $showingAlert) {
+                            }.disabled(viewmodel.loginDisabled).alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Important Message"),
                                       message: Text("incorrect Login"),
                                       dismissButton: .default(Text("Error"))
                                 )
                                 }.alert(item: $viewmodel.error) { error in
-                                Alert(title: Text("Important Message"),
-                                      message: Text("Email or Password is incorrect"),
-                                      dismissButton: .default(Text("Ok"))
-                                )
+                                    if error == .credentialsNotSaved {
+                                        return Alert(title: Text("Credentials Not Saved"), primaryButton: .default(Text("Ok"), action: {
+                                            
+                                            viewmodel.storeCredentialsNext = true
+                                        }), secondaryButton: .cancel())
+                                    } else {
+                                        return Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+                                    }
+                                
                             }.foregroundColor(.red).scaledToFill()
                             .onTapGesture {
                                     UIApplication.shared.endEditing()
@@ -76,9 +73,28 @@ struct SignIn: View {
                             NavigationLink(destination: Register()) {
                                 Text("Register")
                             }.foregroundColor(.green)
+                            
                         }
                     }
+                    if authenticate.biometricType() != .none {
+                        Button {
+                            authenticate.requestBiometricUnlock { (result: Result<Credentials, Authenticate.AuthenticationError>) in
+                                switch result {
+                                case .success(let credentials):
+                                    self.viewmodel.credentials = credentials
+                                    self.viewmodel.login { success in
+                                        authenticate.updateValidation(success: success)
+                                    }
+                                case .failure(let error):
+                                    self.viewmodel.error = error
+                                }
+                            }
+                        } label: {
+                            Image(systemName: authenticate.biometricType() == .face ? "faceid" : "touchid").frame(width: 50, height: 50)
+                        }.multilineTextAlignment(.center)
+                    }
                 }
+                
                 
             }.navigationBarHidden(true)
     }
