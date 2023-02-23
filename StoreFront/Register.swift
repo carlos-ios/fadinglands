@@ -12,10 +12,14 @@ import OSLog
 struct Register: View {
 //    @FetchRequest(fetchRequest: Registration.fetchRequest()) var registration: FetchedResults<Registration>
     @Environment(\.managedObjectContext) private var userInfo
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
+//    @State var firstName: String
+    @AppStorage("email") var email: String = ""
+    @AppStorage("password") var password: String = ""
+    @AppStorage("firstName") var firstName: String = ""
+    @AppStorage("lastName") var lastName: String = ""
+//    @State var lastName: String = ""
+//    @Binding var email: String
+//    @State var password: String
     @State var showingAlert = false
     @State var passwordAlertlength = false
     @State var passwordAlertcontent = false
@@ -62,8 +66,6 @@ struct Register: View {
                                    
                                     logger.log("New data has been saved successfully")
                                     logger.log("saved data : \(self.userInfo.registeredObjects)")
-                                    logger.log("inserted but not saved data : \(self.userInfo.insertedObjects)")
-                                    print("all user data: \(self.userInfo)")
                                 } else {
                                     logger.log("No data submitted")
                                 }
@@ -107,8 +109,4 @@ struct Register: View {
 //    }
 }
 
-struct Register_Previews: PreviewProvider {
-    static var previews: some View {
-        Register()
-    }
-}
+

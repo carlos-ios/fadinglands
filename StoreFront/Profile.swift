@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct Profile: View {
+    @State var signedOut = false
+    @State var firstName = ""
+    @EnvironmentObject var authenticate: Authenticate
+    @Environment(\.managedObjectContext) var userInfo
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("YOU MADE IT")
+            Spacer()
+            Button("Log Out") {
+                authenticate.updateValidation(success: false)
+            }
+        }
     }
 }
 

@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		F244EDED29A0338100DDF340 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244EDEB29A0338100DDF340 /* User+CoreDataClass.swift */; };
 		F244EDEE29A0338100DDF340 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244EDEC29A0338100DDF340 /* User+CoreDataProperties.swift */; };
+		F26C35DE29A59BBE007AA2A3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */; };
 		F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995B41299D8A47001E1D4D /* SignIn.swift */; };
+		F29E4FB229A6CCFE0038B2A4 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */; };
+		F29E4FB429A6CD350038B2A4 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB329A6CD350038B2A4 /* SigninViewModel.swift */; };
+		F29E4FB629A6CDD60038B2A4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB529A6CDD60038B2A4 /* APIService.swift */; };
+		F29E4FB829A6CDDF0038B2A4 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */; };
+		F29E4FBA29A6D1AC0038B2A4 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */; };
 		F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17924299ECC7100CA14C6 /* StringExtensions.swift */; };
 		F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17926299ED8C400CA14C6 /* MainPage.swift */; };
 		F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17928299EF5F700CA14C6 /* Profile.swift */; };
@@ -49,7 +55,13 @@
 /* Begin PBXFileReference section */
 		F244EDEB29A0338100DDF340 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F244EDEC29A0338100DDF340 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F2995B41299D8A47001E1D4D /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		F29E4FB329A6CD350038B2A4 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		F29E4FB529A6CDD60038B2A4 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = "../../../Downloads/My Secure App - Starter/My Secure App/Services/APIService.swift"; sourceTree = "<group>"; };
+		F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "../../../../Downloads/My Secure App - Starter/My Secure App/Services/UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		F2A17924299ECC7100CA14C6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F2A17926299ED8C400CA14C6 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		F2A17928299EF5F700CA14C6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F2A17924299ECC7100CA14C6 /* StringExtensions.swift */,
+				F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,11 +155,16 @@
 				F2BFFFBC299C5590008B48D9 /* Register.swift */,
 				F2A17926299ED8C400CA14C6 /* MainPage.swift */,
 				F2995B41299D8A47001E1D4D /* SignIn.swift */,
+				F29E4FB529A6CDD60038B2A4 /* APIService.swift */,
 				F2A17928299EF5F700CA14C6 /* Profile.swift */,
 				F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */,
 				F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */,
 				F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */,
 				F2A17930299F098500CA14C6 /* CannabisInventory.swift */,
+				F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */,
+				F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */,
+				F29E4FB329A6CD350038B2A4 /* SigninViewModel.swift */,
+				F29E4FB929A6D1AC0038B2A4 /* Authenticate.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -307,19 +325,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BFFF8E299C4D76008B48D9 /* StoreFront.xcdatamodeld in Sources */,
+				F29E4FB629A6CDD60038B2A4 /* APIService.swift in Sources */,
 				F2BFFF89299C4D76008B48D9 /* StoreFrontApp.swift in Sources */,
 				F2A1792D299EF7E000CA14C6 /* DealCampaigns.swift in Sources */,
 				F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */,
 				F2A17931299F098500CA14C6 /* CannabisInventory.swift in Sources */,
 				F2BFFF90299C4D76008B48D9 /* ContentView.swift in Sources */,
 				F244EDED29A0338100DDF340 /* User+CoreDataClass.swift in Sources */,
+				F29E4FBA29A6D1AC0038B2A4 /* Authenticate.swift in Sources */,
 				F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */,
 				F244EDEE29A0338100DDF340 /* User+CoreDataProperties.swift in Sources */,
 				F2BFFF8B299C4D76008B48D9 /* Persistence.swift in Sources */,
+				F29E4FB229A6CCFE0038B2A4 /* Credentials.swift in Sources */,
 				F2A1792B299EF7C500CA14C6 /* StoreInfo.swift in Sources */,
+				F29E4FB429A6CD350038B2A4 /* SigninViewModel.swift in Sources */,
 				F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */,
 				F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */,
 				F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */,
+				F26C35DE29A59BBE007AA2A3 /* ProfileViewModel.swift in Sources */,
+				F29E4FB829A6CDDF0038B2A4 /* UIApplication+Extension.swift in Sources */,
 				F2BFFFBD299C5590008B48D9 /* Register.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +501,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StoreFront/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoreFront/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access store credentials";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -513,6 +539,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StoreFront/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoreFront/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access store credentials";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

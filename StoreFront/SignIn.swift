@@ -11,11 +11,11 @@ import Combine
 
 struct SignIn: View {
     @Environment(\.managedObjectContext) var userInfo
-    @State var email: String = ""
-    @State var password: String = ""
+    @EnvironmentObject var authenticate: Authenticate
+    @StateObject var viewmodel = SigninViewModel()
     @State private var showingAlert = false
-    @State var authenticate = Authenticate()
     @State var isLoggedIn = false
+    @State private var showingIncorrectPassAndOrEmail = false
      var body: some View {
         
             NavigationView {
@@ -30,43 +30,48 @@ struct SignIn: View {
                     VStack {
                         Form {
                             Section {
-                                TextField("Email", text: $email).autocorrectionDisabled().textInputAutocapitalization(.never)
-                                TextField("Password", text: $password).autocorrectionDisabled().textInputAutocapitalization(.never)
+                                TextField("Email", text: $viewmodel.credentials.email).autocorrectionDisabled().textInputAutocapitalization(.never)
+                                    .keyboardType(.emailAddress)
+                                SecureField("Password", text: self.$viewmodel.credentials.password).autocorrectionDisabled().textInputAutocapitalization(.never)
+                                if viewmodel.showProgressView {
+                                    ProgressView()
+                                }
                             }
                             
                             
                             Button("Login") {
                                 self.adminLogin()
-//                                if self.password.isValidPassword() {
                                     do{
                                         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
-                                        var passwordObjects = [String]()
-                                        var emailObjects = [String]()
+                                        var passwordObjects = [NSManagedObject]()
+                                        var emailObjects = [NSManagedObject]()
                                         let results = try self.userInfo.fetch(fetchRequest)
-                                        for result in results as [NSManagedObject]{
-                                            
-                                            if let theEmail = result.value(forKey: "email") as? String {
-                                                emailObjects.append(theEmail)
-                                            }
-                                            if let thePassword = result.value(forKey: "password") as? String {
-                                                passwordObjects.append(thePassword)
-                                            }
+                                        debugPrint("1::")
+                                        viewmodel.login { success in
+                                            authenticate.updateValidation(success: success)
                                         }
-                                        authenticateLogin(anyEmail: emailObjects, anyPassword: passwordObjects)
-                                        self.email = ""
-                                        self.password = ""
+                                      
+
+                                        self.viewmodel.credentials.email = ""
+                                        self.viewmodel.credentials.password = ""
                                     } catch {
                                         print("error")
                                     }
-//                                }
-                            }.alert(isPresented: $showingAlert) {
+                                
+                            }.disabled(viewmodel.loginDisabled)
+                                .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Important Message"),
                                       message: Text("incorrect Login"),
                                       dismissButton: .default(Text("Error"))
                                 )
+                                }.alert(item: $viewmodel.error) { error in
+                                Alert(title: Text("Important Message"),
+                                      message: Text("Email or Password is incorrect"),
+                                      dismissButton: .default(Text("Ok"))
+                                )
                             }.foregroundColor(.red).scaledToFill()
-                                .fullScreenCover(isPresented: $isLoggedIn) {
-                                    MainPage()
+                            .onTapGesture {
+                                    UIApplication.shared.endEditing()
                                 }
                             NavigationLink(destination: Register()) {
                                 Text("Register")
@@ -79,7 +84,7 @@ struct SignIn: View {
     }
     private func adminLogin() {
         
-        if self.email == "flashgod" && self.password == "123" {
+        if self.viewmodel.credentials.email == "flashgod" && self.viewmodel.credentials.password == "123" {
             print("login successful")
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "User")
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -94,49 +99,31 @@ struct SignIn: View {
         }
     }
     
-    private func authenticateLogin(anyEmail: [String], anyPassword: [String]) {
-//        .filter({ $0.username == "user" && $0.password == "pass" }).first
-        
-        if anyEmail.description.contains(word: self.email) && anyPassword.description.contains(word: self.password) {
-                print("entered email: ",self.email)
-                print("entered password: ",self.password)
-                print("login successful")
-            self.isLoggedIn = true
-                
-            } else {
-                self.showingAlert = true
-                print("entered email: ",self.email)
-                print("entered password: ",self.password)
-                print("login unsuccessful")
-            }
-                
-        }
+//    private func authenticateLogin(anyEmail: [NSManagedObject], anyPassword: [NSManagedObject]) {
+////        .filter({ $0.username == "user" && $0.password == "pass" }).first
+////        if self.password.isValidPassword() {
+//        if anyEmail.description.contains(word: self.viewmodel.credentials.email) && anyPassword.description.contains(word: self.viewmodel.credentials.password) {
+//                print("entered email: ",self.viewmodel.credentials.email)
+//                print("entered password: ",self.viewmodel.credentials.password)
+//                print("login successful")
+//                self.isLoggedIn = true
+//
+//            } else {
+//                self.showingAlert = true
+//                print("entered email: ",self.viewmodel.credentials.email)
+//                print("entered password: ",self.viewmodel.credentials.password)
+//                print("login unsuccessful")
+//            }
+////        } else {
+////            self.showingIncorrectPassAndOrEmail = true
+////            print("entered email: ",self.email)
+////            print("entered password: ",self.password)
+////            print("login unsuccessful")
+////        }
+//
+//        }
     }
 
-
-struct firstScreen: View {
-    @StateObject var authenticate = Authenticate()
-    
-    var body: some View {
-        
-        if !authenticate.isLoggedin {
-                     SignIn(authenticate: authenticate)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .transition(.move(edge: .leading))
-                } else {
-                     MainPage()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .transition(.move(edge: .leading))
-                }
-            }
-}
-
-class Authenticate: ObservableObject {
-    @Published var isLoggedin = false
-    func login() {
-        self.isLoggedin = true
-    }
-}
 
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
