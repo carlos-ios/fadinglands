@@ -59,6 +59,8 @@ struct Register: View {
                             viewmodel.storeCredentialsNext = true
                             if KeychainStorage.saveCredentials(credentials) {
                                 viewmodel.storeCredentialsNext = false
+                                self.email = ""
+                                self.password = ""
                             }
                             self.email = ""
                             self.password = ""
