@@ -37,10 +37,11 @@ struct SignIn: View {
                                     ProgressView()
                                 }
                             }
-                            
+                        }
                             
                             Button("Login") {
                                 self.adminLogin()
+                                
                                     do{
                                         viewmodel.login { success in
                                             authenticate.updateValidation(success: success)
@@ -70,11 +71,11 @@ struct SignIn: View {
                             .onTapGesture {
                                     UIApplication.shared.endEditing()
                                 }
+                        Text("")
                             NavigationLink(destination: Register()) {
                                 Text("Register")
                             }.foregroundColor(.green)
-                            
-                        }
+                        
                     }
                     if authenticate.biometricType() != .none {
                         Button {
@@ -93,8 +94,8 @@ struct SignIn: View {
                             Image(systemName: authenticate.biometricType() == .face ? "faceid" : "touchid").frame(width: 50, height: 50)
                         }.multilineTextAlignment(.center)
                     }
-                }
-                
+                }.multilineTextAlignment(.center)
+                Spacer()
                 
             }.navigationBarHidden(true)
     }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StoreFront.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B34A2E4D3E150AA412A25168162EA75E985C20EC</string>
+				<key>dateExpires</key>
+				<string>3/8/24</string>
+				<key>type</key>
+				<string>Cloud Managed Apple Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>8C7J77HU7M.com.henderson.ios.StoreFront.drgreenthumbSD</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>8C7J77HU7M</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>8C7J77HU7M.com.henderson.ios.StoreFront</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>StoreFront.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>6da99449-a5e4-4212-baaa-c4d3a29461bc</string>
+				<key>dateExpires</key>
+				<string>3/8/24</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.henderson.ios.StoreFront.drgreenthumbSD</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8C7J77HU7M</string>
+				<key>name</key>
+				<string>Carlos Henderson</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
