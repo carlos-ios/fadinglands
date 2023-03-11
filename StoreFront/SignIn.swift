@@ -92,9 +92,9 @@ struct SignIn: View {
                             }
                         } label: {
                             Image(systemName: authenticate.biometricType() == .face ? "faceid" : "touchid").frame(width: 50, height: 50)
-                        }.multilineTextAlignment(.center)
+                        }
                     }
-                }.multilineTextAlignment(.center)
+                }
                 Spacer()
                 
             }.navigationBarHidden(true)

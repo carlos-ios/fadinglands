@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F244EDED29A0338100DDF340 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244EDEB29A0338100DDF340 /* User+CoreDataClass.swift */; };
 		F244EDEE29A0338100DDF340 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244EDEC29A0338100DDF340 /* User+CoreDataProperties.swift */; };
+		F251142129BBEFBA00E4B798 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F251142029BBEFBA00E4B798 /* AppDelegateExtension.swift */; };
 		F26C35DE29A59BBE007AA2A3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */; };
 		F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995B41299D8A47001E1D4D /* SignIn.swift */; };
 		F29E4FB229A6CCFE0038B2A4 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		F244EDEB29A0338100DDF340 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F244EDEC29A0338100DDF340 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F251142029BBEFBA00E4B798 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F2995B41299D8A47001E1D4D /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				F2A17924299ECC7100CA14C6 /* StringExtensions.swift */,
 				F29E4FB729A6CDDF0038B2A4 /* UIApplication+Extension.swift */,
+				F251142029BBEFBA00E4B798 /* AppDelegateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */,
 				F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */,
 				F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */,
+				F251142129BBEFBA00E4B798 /* AppDelegateExtension.swift in Sources */,
 				F26C35DE29A59BBE007AA2A3 /* ProfileViewModel.swift in Sources */,
 				F29E4FC029A6F7AC0038B2A4 /* KeychainStorage.swift in Sources */,
 				F29E4FB829A6CDDF0038B2A4 /* UIApplication+Extension.swift in Sources */,

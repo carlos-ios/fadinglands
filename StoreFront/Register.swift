@@ -81,16 +81,12 @@ struct Register: View {
                                   dismissButton: .default(Text("Unable to submit"))
                             )
                         }
-                        NavigationLink(destination: SignIn()){
-                            Text("Login")
-                        }.foregroundColor(.green)
                     }
                     
                 }
             }
             //        }.disabled(disableForm)
-        }.navigationBarHidden(true)
-            .navigationTitle("")
+        }.navigationBarHidden(false).navigationBarTitleDisplayMode(.automatic)
     }
 //    var disableForm: Bool {
 //        email.count < 5 || password.count < 5
