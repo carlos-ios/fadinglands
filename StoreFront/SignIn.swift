@@ -16,6 +16,15 @@ struct SignIn: View {
     @State private var showingAlert = false
     @State var isLoggedIn = false
     @State private var showingIncorrectPassAndOrEmail = false
+    init() {
+        UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "arrow.left")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
+        UINavigationBar.appearance().tintColor = .black
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: UIColor.blue
+        ], for: .normal)
+
+    }
      var body: some View {
         
             NavigationView {
@@ -73,7 +82,7 @@ struct SignIn: View {
                                 }
                         Text("")
                             NavigationLink(destination: Register()) {
-                                Text("Register")
+                                Text("Register").navigationTitle("")
                             }.foregroundColor(.green)
                         
                     }
