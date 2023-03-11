@@ -75,6 +75,11 @@ struct Register: View {
                                   message: Text("Email must be valid and Password must be atleast 5 Characters Long Contain a Capital Letter and One Special Character"),
                                   dismissButton: .default(Text("Unable to submit"))
                             )
+                        }.alert(isPresented: $submitted) {
+                            Alert(title: Text("Congrats!"),
+                                  message: Text("We got you locked in fam."),
+                                  dismissButton: .default(Text("Go Time"))
+                            )
                         }
                     }
                     
