@@ -19,9 +19,8 @@ struct SocialMediaLinks: View {
             Link(destination: URL(string: "https://www.facebook.com/groups/companyofthefadinglands")!)
             {
                 Image("facebook_logo").resizable().frame(width: 200, height: 100)
-            }
+            }.padding(.bottom, 15)
             
-            Spacer()
             Link(destination: URL(string: "https://discord.com/channels/985899791907192862/985899792376926290")!)
             {
                 Image("discord_logo").resizable().frame(width: 200, height: 100)
