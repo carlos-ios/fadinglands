@@ -19,7 +19,8 @@ struct Warband: View {
                         .tag(num)
                 }
             }.tabViewStyle(PageTabViewStyle())
-                .frame(width: proxy.size.width, height: proxy.size.height / 2.4)
+                .frame(width: proxy.size.width, height: proxy.size.height / 2.2)
+                .padding(.top, 20)
         }
     }
 }
