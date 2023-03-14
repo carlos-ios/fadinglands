@@ -31,11 +31,12 @@ struct SignIn: View {
                 
 
                 VStack {
-                    Image("drgreenthumb").resizable()
+                    Spacer()
+                    Image("fadinglandshome").resizable()
                         .scaledToFill()
-                        .frame(width: 200, height: 200)
-                        .border(Color.white)
-                    Text("Welcome to Dr GreenThumb").bold().foregroundColor(.gray)
+                        .frame(width: 400, height: 400).edgesIgnoringSafeArea([.leading, .trailing, .top, .bottom])
+                    Text("Welcome to Fading Lands").bold().foregroundColor(.purple)
+                    Spacer()
                     VStack {
                         Form {
                             Section {

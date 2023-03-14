@@ -9,10 +9,29 @@ import SwiftUI
 
 struct SocialMediaLinks: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            Link(destination: URL(string: "https://instagram.com/company_of_the_fading_lands?igshid=YmMyMTA2M2Y=")!)
+            {
+                Image("Instagram_logo").resizable().frame(width: 200, height: 200)
+            }
+            
+            Link(destination: URL(string: "https://www.facebook.com/groups/companyofthefadinglands")!)
+            {
+                Image("facebook_logo").resizable().frame(width: 200, height: 100)
+            }
+            
+            Spacer()
+            Link(destination: URL(string: "https://discord.com/channels/985899791907192862/985899792376926290")!)
+            {
+                Image("discord_logo").resizable().frame(width: 200, height: 100)
+            }
+        }
     }
 }
 
+
+//https://discord.com/channels/985899791907192862/985899792376926290
 struct SocialMediaLinks_Previews: PreviewProvider {
     static var previews: some View {
         SocialMediaLinks()

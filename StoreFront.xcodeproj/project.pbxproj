@@ -21,10 +21,9 @@
 		F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17924299ECC7100CA14C6 /* StringExtensions.swift */; };
 		F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17926299ED8C400CA14C6 /* MainPage.swift */; };
 		F2A17929299EF5F700CA14C6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17928299EF5F700CA14C6 /* Profile.swift */; };
-		F2A1792B299EF7C500CA14C6 /* StoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */; };
-		F2A1792D299EF7E000CA14C6 /* DealCampaigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */; };
+		F2A1792B299EF7C500CA14C6 /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792A299EF7C500CA14C6 /* AboutUs.swift */; };
+		F2A1792D299EF7E000CA14C6 /* Warband.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792C299EF7E000CA14C6 /* Warband.swift */; };
 		F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */; };
-		F2A17931299F098500CA14C6 /* CannabisInventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A17930299F098500CA14C6 /* CannabisInventory.swift */; };
 		F2A38D7229BA93E90074F714 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A38D7129BA93E90074F714 /* APIService.swift */; };
 		F2BFFF89299C4D76008B48D9 /* StoreFrontApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFF88299C4D76008B48D9 /* StoreFrontApp.swift */; };
 		F2BFFF8B299C4D76008B48D9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFF8A299C4D76008B48D9 /* Persistence.swift */; };
@@ -36,6 +35,8 @@
 		F2BFFFAA299C4D77008B48D9 /* StoreFrontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFFA9299C4D77008B48D9 /* StoreFrontUITests.swift */; };
 		F2BFFFAC299C4D77008B48D9 /* StoreFrontUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFFAB299C4D77008B48D9 /* StoreFrontUITestsLaunchTests.swift */; };
 		F2BFFFBD299C5590008B48D9 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFFFBC299C5590008B48D9 /* Register.swift */; };
+		F2C7634D29C10E8B00EDDE51 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7634C29C10E8B00EDDE51 /* WebView.swift */; };
+		F2C7634F29C11BC700EDDE51 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7634E29C11BC700EDDE51 /* Events.swift */; };
 		F2CA096C29B94600001299D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CA096B29B94600001299D2 /* GoogleService-Info.plist */; };
 		F2CA096F29B9471D001299D2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F2CA096E29B9471D001299D2 /* FirebaseAnalytics */; };
 		F2CA097129B9471D001299D2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = F2CA097029B9471D001299D2 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -98,10 +99,9 @@
 		F2A17924299ECC7100CA14C6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F2A17926299ED8C400CA14C6 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		F2A17928299EF5F700CA14C6 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfo.swift; sourceTree = "<group>"; };
-		F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCampaigns.swift; sourceTree = "<group>"; };
+		F2A1792A299EF7C500CA14C6 /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		F2A1792C299EF7E000CA14C6 /* Warband.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warband.swift; sourceTree = "<group>"; };
 		F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLinks.swift; sourceTree = "<group>"; };
-		F2A17930299F098500CA14C6 /* CannabisInventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannabisInventory.swift; sourceTree = "<group>"; };
 		F2A38D7129BA93E90074F714 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F2BFFF85299C4D76008B48D9 /* StoreFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BFFF88299C4D76008B48D9 /* StoreFrontApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontApp.swift; sourceTree = "<group>"; };
@@ -117,6 +117,8 @@
 		F2BFFFA9299C4D77008B48D9 /* StoreFrontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontUITests.swift; sourceTree = "<group>"; };
 		F2BFFFAB299C4D77008B48D9 /* StoreFrontUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2BFFFBC299C5590008B48D9 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		F2C7634C29C10E8B00EDDE51 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F2C7634E29C11BC700EDDE51 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		F2CA096B29B94600001299D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,10 +223,9 @@
 				F2A17926299ED8C400CA14C6 /* MainPage.swift */,
 				F2995B41299D8A47001E1D4D /* SignIn.swift */,
 				F2A17928299EF5F700CA14C6 /* Profile.swift */,
-				F2A1792A299EF7C500CA14C6 /* StoreInfo.swift */,
-				F2A1792C299EF7E000CA14C6 /* DealCampaigns.swift */,
+				F2A1792A299EF7C500CA14C6 /* AboutUs.swift */,
+				F2A1792C299EF7E000CA14C6 /* Warband.swift */,
 				F2A1792E299F096A00CA14C6 /* SocialMediaLinks.swift */,
-				F2A17930299F098500CA14C6 /* CannabisInventory.swift */,
 				F26C35DD29A59BBD007AA2A3 /* ProfileViewModel.swift */,
 				F29E4FB129A6CCFE0038B2A4 /* Credentials.swift */,
 				F29E4FB329A6CD350038B2A4 /* SigninViewModel.swift */,
@@ -232,6 +233,8 @@
 				F29E4FBF29A6F7AC0038B2A4 /* KeychainStorage.swift */,
 				F2CA096B29B94600001299D2 /* GoogleService-Info.plist */,
 				F2A38D7129BA93E90074F714 /* APIService.swift */,
+				F2C7634C29C10E8B00EDDE51 /* WebView.swift */,
+				F2C7634E29C11BC700EDDE51 /* Events.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -427,19 +430,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2BFFF8E299C4D76008B48D9 /* StoreFront.xcdatamodeld in Sources */,
+				F2C7634D29C10E8B00EDDE51 /* WebView.swift in Sources */,
 				F2BFFF89299C4D76008B48D9 /* StoreFrontApp.swift in Sources */,
-				F2A1792D299EF7E000CA14C6 /* DealCampaigns.swift in Sources */,
+				F2A1792D299EF7E000CA14C6 /* Warband.swift in Sources */,
 				F2A17925299ECC7100CA14C6 /* StringExtensions.swift in Sources */,
 				F2A38D7229BA93E90074F714 /* APIService.swift in Sources */,
-				F2A17931299F098500CA14C6 /* CannabisInventory.swift in Sources */,
 				F2BFFF90299C4D76008B48D9 /* ContentView.swift in Sources */,
 				F244EDED29A0338100DDF340 /* User+CoreDataClass.swift in Sources */,
 				F29E4FBA29A6D1AC0038B2A4 /* Authenticate.swift in Sources */,
 				F2A17927299ED8C400CA14C6 /* MainPage.swift in Sources */,
 				F244EDEE29A0338100DDF340 /* User+CoreDataProperties.swift in Sources */,
 				F2BFFF8B299C4D76008B48D9 /* Persistence.swift in Sources */,
+				F2C7634F29C11BC700EDDE51 /* Events.swift in Sources */,
 				F29E4FB229A6CCFE0038B2A4 /* Credentials.swift in Sources */,
-				F2A1792B299EF7C500CA14C6 /* StoreInfo.swift in Sources */,
+				F2A1792B299EF7C500CA14C6 /* AboutUs.swift in Sources */,
 				F29E4FB429A6CD350038B2A4 /* SigninViewModel.swift in Sources */,
 				F2A1792F299F096A00CA14C6 /* SocialMediaLinks.swift in Sources */,
 				F2995B42299D8A47001E1D4D /* SignIn.swift in Sources */,
@@ -609,7 +613,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreFront/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = StoreFront;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access store credentials";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -626,7 +630,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.henderson.ios.StoreFront.drgreenthumbSD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henderson.ios.fadinglands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -653,7 +657,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StoreFront/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${PRODUCT_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = StoreFront;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Allow Face ID to access store credentials";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -670,7 +674,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.henderson.ios.StoreFront.drgreenthumbSD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.henderson.ios.fadinglands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -8,24 +8,32 @@
 import SwiftUI
 
 struct MainPage: View {
-    
+    init() {
+        UITabBar.appearance().itemPositioning = .centered
+        UITabBar.appearance().selectedItem?.badgeColor = .systemBlue
+    }
     var body: some View {
-        TabView {
+        
+        TabView() {
+           
             Text("main")
-            CannabisInventory().tabItem {
-                Label("Cannabis", systemImage: "leaf.circle.fill")
-            }
+//            CannabisInventory().tabItem {
+//                Label("Cannabis", systemImage: "leaf.circle.fill")
+//            }
             Profile().tabItem {
-                Label("Profile", systemImage: "person.crop.circle")
+                Label("Chat", systemImage: "person.crop.circle")
             }
-            StoreInfo().tabItem {
-                Label("Store", systemImage: "house.fill")
+            AboutUs().tabItem {
+                Label("Charter", systemImage: "house.fill")
             }
-            DealCampaigns().tabItem {
-                Label("Deals", systemImage: "lasso.and.sparkles")
+            Warband().tabItem {
+                Label("Warband", systemImage: "lasso.and.sparkles")
             }
             SocialMediaLinks().tabItem {
                 Label("Social", systemImage: "person.line.dotted.person.fill")
+            }
+            Events().tabItem {
+                Label("Events", systemImage: "calendar")
             }
             
         }
